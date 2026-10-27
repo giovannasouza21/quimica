@@ -1,0 +1,212 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-page: #f8faf6;
+            --primary-green: #2e7d32;
+            --primary-light: #e8f5e9;
+            --secondary-yellow: #fff9c4;
+            --yellow-accent: #fbc02d;
+            --text-main: #2c3e50;
+            --text-muted: #546e7a;
+            --card-bg: #ffffff;
+            --border-color: #e0e6ed;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Seções e Cards */
+        section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        section h2 {
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            display: flex;
+            
+            gap: 10px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+        }
+
+        /* Como Funciona - Eschema */
+        .electro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .electro-card {
+            background-color: var(--bg-page);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .electro-card.zinc { border-left-color: #78909c; }
+        .electro-card.copper { border-left-color: #d84315; }
+        .electro-card.potato { border-left-color: var(--yellow-accent); }
+
+        .electro-card h3 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .electro-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Lista de Materiais */
+        .materials-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .materials-list li {
+            background-color: var(--secondary-yellow);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Passo a Passo Numerado */
+        .steps-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .steps-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 34px;
+            height: 34px;
+            background-color: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .steps-list h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .steps-list p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Caixa de Dica e Observação */
+        .info-box {
+            background-color: #fffde7;
+            border: 1px solid #fff59d;
+            border-left: 5px solid var(--yellow-accent);
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        .info-box h3 {
+            color: #f57f17;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .info-box p {
+            font-size: 0.9rem;
+            color: #5d4037;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 30px;
+        }
+
+        /* Adaptabilidade Responsiva */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            section {
+                padding: 20px;
+            }
+        }
